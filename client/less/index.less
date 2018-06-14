@@ -1,0 +1,19 @@
+@import "./base/base.all.less";
+@import "./lay/lay.all.less";
+p{
+    color:blue;
+    .text-multi-ellipsis(3,20);
+    .tooltip;
+}
+.wrapper{
+    .flex-wrapper('wrap','center','center','center');
+    height:300px;
+    background: blueviolet;
+    .flex-item{
+        flex:0 0 auto;
+        height:50px;
+        width:400px;
+        margin:10px;
+        background-color: red;
+    }
+}
