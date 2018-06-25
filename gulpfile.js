@@ -63,7 +63,7 @@ gulp.task('clean', function() {
 
 gulp.task('ejs',function() {
 	return gulp
-		.src('client/**/*.ejs')
+		.src('client/views/**/*.ejs')
 		.pipe(miniHtml({
 			collapseWhitespace: true
 		}))
@@ -76,7 +76,7 @@ gulp.task('ejs',function() {
 
 gulp.task("less",function() {
 	return gulp
-		.src(['client/**/*.less'])
+		.src(['client/less/**/*.less'])
 		.pipe(less({
 			paths: [path.join(__dirname, 'less', 'includes')]
 		}))
@@ -139,9 +139,9 @@ gulp.task('fonts', function() {
 
 gulp.task('build',['ejs','less','js','img','fonts'],function(){
 	// 监听ejs
-	gulp.watch('client/**/*.ejs', ['ejs']);
+	gulp.watch('client/views/**/*.ejs', ['ejs']);
 	// 监听所有css文档
-	gulp.watch('client/**/*.less', ['less']);
+	gulp.watch('client/less/**/*.less', ['less']);
 	// 监听所有js文档
 	gulp.watch('client/js/**/*', ['js']);
 	// 监听所有image
